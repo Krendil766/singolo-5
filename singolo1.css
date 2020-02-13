@@ -1,0 +1,105 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 1020px;
+  height: 89px;
+  margin: 0 auto;
+  background-color: #2d303a;
+  border-bottom: 6px solid #323746;
+}
+
+.logo {
+  margin: 34px 0 35px 40px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -0.475px;
+}
+
+.logo::after {
+  color: #f06c64;
+  content: "*";
+}
+
+.navbar {
+  display: flex;
+  margin-top: 45px;
+  margin-right: 40px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 9px;
+  color: #ffffff;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.navbar__item {
+  position: relative;
+}
+
+.navbar__item:first-child {
+  color: #f06c64;
+}
+
+.navbar__item:nth-child(2) {
+  margin-left: 30px;
+  letter-spacing: -0.168px;
+}
+
+.navbar__item:nth-child(5) {
+  letter-spacing: -0.19px;
+}
+
+.navbar__item + .navbar__item {
+  margin-left: 29px;
+}
+
+.navbar__item + .navbar__item::before {
+  position: absolute;
+  bottom: 3px;
+  left: -16px;
+  color: #494e62;
+  content: ".";
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-display: fallback;
+  src: url("/assets/fonts/lato-v16-latin-300.woff2") format("woff2"),
+    url("/assets/fonts/lato-v16-latin-300.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("/assets/fonts/lato-v16-latin-regular.woff2") format("woff2"),
+    url("/assets/fonts/lato-v16-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("/assets/fonts/lato-v16-latin-700.woff2") format("woff2"),
+    url("/assets/fonts/lato-v16-latin-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  font-display: fallback;
+  src: url("/assets/fonts/lato-v16-latin-900.woff2") format("woff2"),
+    url("/assets/fonts/lato-v16-latin-900.woff") format("woff");
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
