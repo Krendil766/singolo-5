@@ -14,119 +14,163 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="logo">singolo</h1>
-      <nav>
-        <ul class="navbar">
-          <li class="navbar__item">home</li>
-          <li class="navbar__item">services</li>
-          <li class="navbar__item">portfolio</li>
-          <li class="navbar__item">about</li>
-          <li class="navbar__item">contact</li>
-        </ul>
-      </nav>
+      <div class="header-wrapper">
+        <h1 class="logo">singolo</h1>
+        <nav>
+          <ul class="navbar">
+            <li class="navbar__item">home</li>
+            <li class="navbar__item">services</li>
+            <li class="navbar__item">portfolio</li>
+            <li class="navbar__item">about</li>
+            <li class="navbar__item">contact</li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main class="main">
       <section class="slider">
-        <div class="arrow">
+        <div class="slider-wrapper">
+          <div class="arrow">
+            <img
+              class="arrow__left"
+              src="/assets/images/arrow-left.png"
+              alt="arrow left"
+            />
+          </div>
           <img
-            class="arrow__left"
-            src="/assets/images/arrow-left.png"
-            alt="arrow left"
+            class="phone-one"
+            src="/assets/images/phone-one.png"
+            alt="phone-one"
+            width="240"
+            height="483"
           />
-        </div>
-        <div class="phone phone-one">
+          <div class="border-one"></div>
           <img
-            class="phone__shadow"
-            src="/assets/images/shadow_166.png"
-            alt="shadow"
+            class="phone-two"
+            src="/assets/images/phone-two.png"
+            alt="phone-two"
+            width="484"
+            height="240"
           />
-          <img
-            class="phone__base"
-            src="/assets/images/base_122.png"
-            alt="base"
-          />
-          <img
-            class="phone__screen"
-            src="/assets/images/screen_77.png"
-            alt="screen"
-          />
-          <img
-            class="phone__speaker"
-            src="/assets/images/speaker_125.png"
-            alt="speaker"
-          />
-          <img
-            class="phone__button"
-            src="/assets/images/circle_73.png"
-            alt="button"
-          />
-          <img
-            class="phone__button-inside"
-            src="/assets/images/square_74.png"
-            alt="button-inside"
-          />
-          <img
-            class="phone__camera"
-            src="/assets/images/outer_circle_84.png"
-            alt="camera"
-          />
-          <img
-            class="phone__camera-inside"
-            src="/assets/images/red_dot_85.png"
-            alt="camera-inside"
-          />
-        </div>
-        <div class="phone phone-two">
-          <img
-            class="phone__shadow"
-            src="/assets/images/shadow_166.png"
-            alt="shadow"
-          />
-          <img
-            class="phone__base"
-            src="/assets/images/base_122.png"
-            alt="base"
-          />
-          <img
-            class="phone__screen"
-            src="/assets/images/screen_77.png"
-            alt="screen"
-          />
-          <img
-            class="phone__speaker"
-            src="/assets/images/speaker_125.png"
-            alt="speaker"
-          />
-          <img
-            class="phone__button"
-            src="/assets/images/circle_73.png"
-            alt="button"
-          />
-          <img
-            class="phone__button-inside"
-            src="/assets/images/square_74.png"
-            alt="button-inside"
-          />
-          <img
-            class="phone__camera"
-            src="/assets/images/outer_circle_84.png"
-            alt="camera"
-          />
-          <img
-            class="phone__camera-inside"
-            src="/assets/images/red_dot_85.png"
-            alt="camera-inside"
-          />
-        </div>
-        <div class="arrow">
-          <img
-            class="arrow__right"
-            src="/assets/images/arrow-right.png"
-            alt="arrow right"
-          />
+          <div class="border-two"></div>
+          <div class="arrow">
+            <img
+              class="arrow__right"
+              src="/assets/images/arrow-right.png"
+              alt="arrow right"
+            />
+          </div>
         </div>
       </section>
-      <section class="services">services</section>
+      <section class="services">
+        <div class="service-wrapper">
+          <h2 class="services__title">Our Services</h2>
+          <p class="services__text">
+            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.
+            Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget
+            lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo,
+            tortor mauris condimentum nibh.
+          </p>
+          <div class="services-list">
+            <div class="services-list__item">
+              <img
+                class="icon"
+                src="/assets/icons/pen.svg"
+                alt="pen"
+                width="59"
+                height="59"
+              />
+              <article class="service">
+                <h3 class="service__title">Custom Design</h3>
+                <p class="service__text">
+                  Curabitur vestibulum eget mauris quis laoreet. Phasellus in
+                  quam laoreet, viverra lacus ut, ultrices velit.
+                </p>
+              </article>
+            </div>
+            <div class="services-list__item">
+              <img
+                class="icon"
+                src="/assets/icons/lightbulb.svg"
+                alt="lamp"
+                width="59"
+                height="59"
+              />
+              <article class="service">
+                <h3 class="service__title">Inovative Ideas</h3>
+                <p class="service__text">
+                  Quisque luctus, quam eget molestie com-modo, lacus purus
+                  cursus purus, nec rutrum tellus dolor id lorem.
+                </p>
+              </article>
+            </div>
+            <div class="services-list__item">
+              <img
+                class="icon"
+                src="/assets/icons/heart.svg"
+                alt="heart"
+                width="59"
+                height="59"
+              />
+              <article class="service">
+                <h3 class="service__title">Love Is The Answer</h3>
+                <p class="service__text">
+                  Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet
+                  turpis, et consequat felis. Quisque condimentum.
+                </p>
+              </article>
+            </div>
+            <div class="services-list__item">
+              <img
+                class="icon"
+                src="/assets/icons/phone.svg"
+                alt="phone"
+                width="59"
+                height="59"
+              />
+              <article class="service">
+                <h3 class="service__title">Responsive Layout</h3>
+                <p class="service__text">
+                  Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas
+                  blandit nunc ligula. Prae-sent elit leo.
+                </p>
+              </article>
+            </div>
+            <div class="services-list__item">
+              <img
+                class="icon"
+                src="/assets/icons/bubble.svg"
+                alt="bubble"
+                width="59"
+                height="59"
+              />
+              <article class="service">
+                <h3 class="service__title">24 / 7 Support</h3>
+                <p class="service__text">
+                  Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi.
+                  Nulla a sem erat. Pellen-tesque egestas venenatis lorem .
+                </p>
+              </article>
+            </div>
+            <div class="services-list__item">
+              <img
+                class="icon"
+                src="/assets/icons/star.svg"
+                alt="star"
+                width="59"
+                height="59"
+              />
+              <article class="service">
+                <h3 class="service__title">Feel Like A Star</h3>
+                <p class="service__text">
+                  Quisque hendrerit purus dapibus, ornare nibh vitae, viverra
+                  nibh. Fusce vitae aliquam tellus.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
