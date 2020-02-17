@@ -3,13 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
-      crossorigin="anonymous"
-    />
+    <title>Singolo</title>
     <link rel="stylesheet" href="singolo1.css" />
   </head>
   <body>
@@ -18,11 +12,11 @@
         <h1 class="logo">singolo</h1>
         <nav>
           <ul class="navbar">
-            <li class="navbar__item">home</li>
-            <li class="navbar__item">services</li>
-            <li class="navbar__item">portfolio</li>
-            <li class="navbar__item">about</li>
-            <li class="navbar__item">contact</li>
+            <li class="navbar__item"><a href="#">home</a></li>
+            <li class="navbar__item"><a href="#">services</a></li>
+            <li class="navbar__item"><a href="#">portfolio</a></li>
+            <li class="navbar__item"><a href="#">about</a></li>
+            <li class="navbar__item"><a href="#">contact</a></li>
           </ul>
         </nav>
       </div>
@@ -30,13 +24,7 @@
     <main class="main">
       <section class="slider">
         <div class="slider-wrapper">
-          <div class="arrow">
-            <img
-              class="arrow__left"
-              src="assets/images/arrow-left.png"
-              alt="arrow left"
-            />
-          </div>
+          <button class="arrow-left"></button>
           <img
             class="phone-one"
             src="assets/images/phone-one.png"
@@ -53,13 +41,7 @@
             height="240"
           />
           <div class="border-two"></div>
-          <div class="arrow">
-            <img
-              class="arrow__right"
-              src="assets/images/arrow-right.png"
-              alt="arrow right"
-            />
-          </div>
+          <button class="arrow-right"></button>
         </div>
       </section>
       <section class="services">
