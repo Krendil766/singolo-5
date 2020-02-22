@@ -212,6 +212,12 @@ button:-moz-focusring,
   margin-bottom: 11px;
   cursor: pointer;
   border: none;
+  transition: filter 0.3s;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+  filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.5)) contrast(140%);
 }
 
 .phone-one {
