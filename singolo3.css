@@ -358,12 +358,17 @@ body {
   list-style: none;
 }
 
+.tags li:not(:first-child) {
+  margin-left: 10px;
+}
+
 .tags__item {
   font-size: 12px;
   font-weight: 400;
   line-height: 1;
   color: #767e9e;
   cursor: pointer;
+  background-color: transparent;
   border: 1px solid #666d89;
   border-radius: 5px;
   transition: color 0.3s, border 0.3s;
@@ -379,24 +384,20 @@ body {
   border: 1px solid #c5c5c5;
 }
 
-.tags__item:nth-child(1) {
+.tags li:nth-child(1) .tags__item {
   padding: 4px 6px 4px 7px;
 }
 
-.tags__item:nth-child(2) {
+.tags li:nth-child(2) .tags__item {
   padding: 4px 6px 4px 6px;
-  margin-left: 10px;
 }
 
-.tags__item:nth-child(3) {
-  width: 83px;
-  padding: 4px 2px 4px 6px;
-  margin-left: 10px;
+.tags li:nth-child(3) .tags__item {
+  padding: 4px 5px 4px 6px;
 }
 
-.tags__item:nth-child(4) {
+.tags li:nth-child(4) .tags__item {
   padding: 4px 4px 4px 7px;
-  margin-left: 10px;
 }
 
 .project-link {
