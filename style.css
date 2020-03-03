@@ -714,3 +714,11 @@ body {
 .footer__social-links {
   margin-right: 39px;
 }
+
+.copyright {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 6px;
+  color: #666d89;
+  letter-spacing: -0.144px;
+}
