@@ -1,3 +1,41 @@
+.services__title,
+.portfolio__title,
+.about-us__title,
+.get-a-quote__title {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 17px;
+}
+
+.services__text,
+.portfolio__text,
+.about-us__text,
+.get-a-quote__text {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.service__title,
+.employee__name,
+.contacts__title {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 17px;
+}
+
+.service__text,
+.employee__description,
+.form__input-text,
+.contacts__text,
+.contacts__address,
+.contacts__phone,
+.contacts__mail {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -238,23 +276,17 @@ body {
 }
 
 .services__wrapper {
-  padding: 69px 0 30px 0;
+  padding: 68px 0 30px 0;
 }
 
 .services__title {
   margin: 0 0 0 40px;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 17px;
   color: #666d89;
   letter-spacing: -0.18px;
 }
 
 .services__text {
-  margin: 27px 40px 0 40px;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
+  margin: 28px 40px 0 40px;
   color: #767e9e;
   text-align: justify;
 }
@@ -279,9 +311,6 @@ body {
 
 .service__title {
   margin: 0;
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 17px;
   color: #666d89;
   letter-spacing: -0.09px;
 }
@@ -290,9 +319,6 @@ body {
   height: 63px;
   margin: 11px 0 0 0;
   overflow: hidden;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 21px;
   color: #767e9e;
   text-align: justify;
 }
@@ -320,22 +346,16 @@ body {
 }
 
 .portfolio__wrapper {
-  padding-top: 67px;
+  padding-top: 66px;
 }
 
 .portfolio__title {
   margin: 3px 0 0 40px;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 17px;
   color: #666d89;
 }
 
 .portfolio__text {
   margin: 27px 0 0 40px;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
   color: #767e9e;
 }
 
@@ -426,17 +446,11 @@ body {
 
 .about-us__title {
   margin: 0 0 0 40px;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 17px;
   color: #666d89;
 }
 
 .about-us__text {
   margin: 28px 40px 0 40px;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
   color: #767e9e;
   text-align: justify;
 }
@@ -454,9 +468,6 @@ body {
 .employee__name {
   margin: 15px 0 0 0;
   overflow: hidden;
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 17px;
   color: #666d89;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -464,9 +475,6 @@ body {
 
 .employee__description {
   margin: 10px 0 0 0;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 21px;
   color: #767e9e;
   text-align: justify;
 }
@@ -548,23 +556,17 @@ body {
 }
 
 .get-a-quote__wrapper {
-  padding-top: 68px;
+  padding-top: 69px;
   padding-bottom: 21px;
 }
 
 .get-a-quote__title {
   margin: 0 0 0 40px;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 17px;
   color: #f0d8d9;
 }
 
 .get-a-quote__text {
-  margin: 28px 40px 0 40px;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 30px;
+  margin: 27px 40px 0 40px;
   color: #f0d8d9;
   text-align: justify;
 }
@@ -577,6 +579,7 @@ body {
 .get-a-quote__contacts {
   display: flex;
   flex-direction: column;
+  margin-top: 1px;
   margin-left: 21px;
 }
 
@@ -588,9 +591,6 @@ body {
 
 .form__input-text {
   padding: 8px 15px 9px 15px;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 21px;
   color: #f0d8d9;
   background-color: #d6564f;
   border: none;
@@ -637,9 +637,6 @@ body {
 
 .contacts__title {
   margin: 0;
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 17px;
   color: #f0d8d9;
   letter-spacing: -0.09px;
 }
@@ -648,14 +645,11 @@ body {
 .contacts__address,
 .contacts__phone,
 .contacts__mail {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 21px;
   color: #f0d8d9;
 }
 
 .contacts__text {
-  margin: 11px 0 0 0;
+  margin: 10px 0 0 0;
   text-align: justify;
   letter-spacing: -0.04px;
 }
@@ -713,7 +707,7 @@ body {
 }
 
 .footer__copyright {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   margin-left: 42px;
 }
 
