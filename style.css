@@ -276,7 +276,7 @@ body {
 }
 
 .services__wrapper {
-  padding: 68px 0 30px 0;
+  padding: 69px 0 29px 0;
 }
 
 .services__title {
@@ -286,7 +286,7 @@ body {
 }
 
 .services__text {
-  margin: 28px 40px 0 40px;
+  margin: 27px 40px 0 40px;
   color: #767e9e;
   text-align: justify;
 }
@@ -296,7 +296,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-right: 41px;
-  margin: 45px 0 0 40px;
+  margin: 46px 0 0 40px;
 }
 
 .services-list__item {
@@ -306,7 +306,7 @@ body {
 }
 
 .service {
-  margin: 0 0 0 19px;
+  margin: 0 0 0 20px;
 }
 
 .service__title {
@@ -325,7 +325,7 @@ body {
 
 .services-list__item:nth-child(3) .service,
 .services-list__item:nth-child(6) .service {
-  margin-left: 19px;
+  margin-left: 20px;
 }
 
 .services-list__item:nth-child(3) .service__title,
@@ -334,8 +334,8 @@ body {
 }
 
 .icon {
-  margin-top: 2px;
-  margin-left: 2px;
+  margin-top: 1px;
+  margin-left: 1px;
 }
 
 .portfolio {
@@ -367,9 +367,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-height: 621px;
   margin: 19px 40px 0 40px;
-  overflow: hidden;
 }
 
 .tags {
@@ -424,6 +422,10 @@ body {
 .project-link {
   height: 187px;
   margin-bottom: 20px;
+}
+
+.project-link:nth-child(1n + 13) {
+  display: none;
 }
 
 .project-photo {
