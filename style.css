@@ -623,6 +623,7 @@ body {
 
 .form__input-text::placeholder {
   color: #f48c8f;
+  opacity: 1;
 }
 
 .form__input-text:-moz-ui-invalid {
