@@ -189,6 +189,10 @@ body {
   line-height: 0;
 }
 
+.navbar__item_active .navbar__link {
+  color: #f06c64;
+}
+
 .navbar__item a {
   font-size: 12px;
   font-weight: 700;
