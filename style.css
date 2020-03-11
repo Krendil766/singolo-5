@@ -152,6 +152,10 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   min-width: 1020px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
@@ -160,6 +164,10 @@ body {
 .header__wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.header nav {
+  display: flex;
 }
 
 .logo {
@@ -179,7 +187,8 @@ body {
 
 .navbar {
   display: flex;
-  margin-top: 45px;
+  align-self: center;
+  margin-top: 24px;
   margin-right: 40px;
   list-style: none;
 }
@@ -228,6 +237,7 @@ body {
 }
 
 .slider {
+  margin-top: 95px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
 }

@@ -9,12 +9,12 @@
     <link href="script.js" rel="preload" as="script" />
   </head>
   <body>
-    <header class="header" id="home">
+    <header class="header">
       <div class="wrapper header__wrapper">
         <h1 class="logo">singolo</h1>
         <nav>
           <ul class="navbar" id="navbar">
-            <li class="navbar__item">
+            <li class="navbar__item" id="home">
               <a class="navbar__link" href="#home">home</a>
             </li>
             <li class="navbar__item">
@@ -171,14 +171,14 @@
             eget lacinia odio sem nec elit.
           </p>
           <div class="portfolio__tags">
-            <ul class="tags">
+            <ul class="tags" id="tags">
               <li><button class="tags__item tags__item_active">All</button></li>
               <li><button class="tags__item">Web Design</button></li>
               <li><button class="tags__item">Graphic Design</button></li>
               <li><button class="tags__item">Artwork</button></li>
             </ul>
           </div>
-          <div class="portfolio__photos">
+          <div class="portfolio__photos" id="portfolio__photos">
             <a href="#" class="project-link">
               <img
                 src="assets/images/project1.png"
