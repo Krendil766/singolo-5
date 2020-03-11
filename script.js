@@ -41,9 +41,11 @@ for (let link of LINKS) {
     const linkTo = link.getAttribute("href")
     if (linkTo === "#home") window.scrollTo({ top, behavior: "smooth" })
     else
-      document
-        .querySelector(linkTo)
-        .scrollIntoView({ behavior: "smooth", block: "start" })
+      document.querySelector(linkTo).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      })
   })
 }
 //--------------------------------------------
@@ -70,19 +72,26 @@ for (let filterButton of filterButtons) {
   filterButton.addEventListener("click", shufflePortfolio)
 }
 
-function shufflePortfolio() {
+function shufflePortfolio(event) {
+  if (event.target.classList.contains("tags__item_active")) return
   let portfolioPhotos = document.getElementById("portfolio__photos")
 
-  let portfolio = document.querySelectorAll(".project-link")
-  console.log(portfolio)
+  const DIV = document.createElement("div")
+  DIV.className = "portfolio__photos"
+  DIV.id = "portfolio__photos"
+
+  let portfolio = Array.from(portfolioPhotos.querySelectorAll(".project-link"))
 
   for (let i = portfolio.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    // portfolioPhotos.replaceChild(portfolio[j], portfolio[i])
-    ;[portfolio[i], portfolio[j]] = [portfolio[j], portfolio[i]]
+    const TEMP = portfolio[j]
+    portfolio[j] = portfolio[i]
+    portfolio[i] = TEMP
+  }
+  for (let item of portfolio) {
+    DIV.append(item)
   }
 
-  console.log(portfolioPhotos)
-  portfolioPhotos.replaceWith(...portfolio)
+  portfolioPhotos.replaceWith(DIV)
 }
 //--------------------------------------------
