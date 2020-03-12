@@ -449,6 +449,10 @@ body {
   display: none;
 }
 
+.project-link_active {
+  outline: 5px solid #f06c64;
+}
+
 @keyframes entrance {
   0% {
     opacity: 0.2;
