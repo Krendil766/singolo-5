@@ -147,3 +147,14 @@ function onSubmitForm(event) {
   }
 }
 //--------------------------------------------
+
+// Переключение телефонов
+const phones = document.querySelectorAll(".phone")
+for (let phone of phones) phone.addEventListener("click", togglePhone)
+
+function togglePhone(event) {
+  if (event.target.classList.contains("iphone")) {
+    event.target.nextElementSibling.classList.toggle("hide")
+  } else event.target.classList.toggle("hide")
+}
+//--------------------------------------------

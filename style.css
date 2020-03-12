@@ -274,14 +274,43 @@ body {
   filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.5)) contrast(140%);
 }
 
-.phone-one {
-  margin-bottom: 11px;
-  margin-left: 53px;
+.slide {
+  display: flex;
+  align-items: center;
 }
 
-.phone-two {
+.phone {
+  cursor: pointer;
+}
+
+.phone_one {
+  margin-bottom: 11px;
+  margin-left: 54px;
+}
+
+.phone_two {
   margin-bottom: 12px;
   margin-left: 73px;
+}
+
+.phone__screen {
+  position: absolute;
+  z-index: 1;
+  transition: opacity 0.4s;
+}
+
+.phone__screen_one {
+  top: 118px;
+  left: 126px;
+}
+
+.phone__screen_two {
+  top: 188px;
+  left: 485px;
+}
+
+.hide {
+  opacity: 0;
 }
 
 .services {
