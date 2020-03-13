@@ -32,19 +32,14 @@ function changeActiveNav(i) {
 
 // Стилизация хедера при скролле
 const H1 = document.querySelector("h1")
-const HEADER = document.querySelector(".header")
 
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 100) {
-    HEADER.style.opacity = "0.7"
-    H1.style.margin = "10px 0 4px 40px"
-    NAV.style.marginTop = "4px"
-    NAV.style.marginBottom = "0"
+    H1.classList.add("logo_small")
+    NAV.classList.add("navbar_small")
   } else {
-    HEADER.style.opacity = "1"
-    H1.style.margin = "34px 0 35px 40px"
-    NAV.style.marginTop = "24px"
-    NAV.style.marginBottom = "16px"
+    H1.classList.remove("logo_small")
+    NAV.classList.remove("navbar_small")
   }
 })
 //--------------------------------------------
@@ -57,12 +52,14 @@ for (let link of LINKS) {
     event.preventDefault()
     const LINK_TO = link.getAttribute("href")
     if (LINK_TO === "#home") window.scrollTo({ top, behavior: "smooth" })
-    else
-      document.querySelector(LINK_TO).scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "nearest"
-      })
+    else {
+      const yOffset = -39
+      const element = document.querySelector(LINK_TO)
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset
+
+      window.scrollTo({ top: y, behavior: "smooth" })
+    }
   })
 }
 //--------------------------------------------
@@ -134,20 +131,6 @@ function portfolioClickHandler(event) {
 
 //--------------------------------------------
 
-// Сабмит формы
-const SUBMIT_BUTTON = document.getElementById("submit-button")
-SUBMIT_BUTTON.addEventListener("click", onSubmitForm)
-
-function onSubmitForm(event) {
-  const inputName = document.getElementById("name")
-  const inputEmail = document.getElementById("email")
-
-  if (inputName.checkValidity() && inputEmail.checkValidity()) {
-    event.preventDefault()
-  }
-}
-//--------------------------------------------
-
 // Переключение телефонов
 const phones = document.querySelectorAll(".phone")
 for (let phone of phones) phone.addEventListener("click", togglePhone)
@@ -155,6 +138,57 @@ for (let phone of phones) phone.addEventListener("click", togglePhone)
 function togglePhone(event) {
   if (event.target.classList.contains("iphone")) {
     event.target.nextElementSibling.classList.toggle("hide")
-  } else event.target.classList.toggle("hide")
+  } else if (event.target.classList.contains("phone__screen"))
+    event.target.classList.toggle("hide")
+}
+//--------------------------------------------
+
+// Переключение слайдов
+const arrowLeft = document.getElementById("arrow-left")
+const arrowRight = document.getElementById("arrow-right")
+const slides = document.querySelectorAll(".slide")
+const slider = document.getElementById("slider")
+
+arrowLeft.addEventListener("click", changeSlideLeft)
+arrowRight.addEventListener("click", changeSlideRight)
+
+function changeSlideLeft() {
+  changeSlide("left")
+}
+
+function changeSlideRight() {
+  changeSlide("right")
+}
+
+function changeSlide(direction) {
+  for (let slide of slides) {
+    slide.classList.toggle("slide_hide")
+  }
+  for (let slide of slides) {
+    if (!slide.classList.contains("slide_hide")) {
+      changeSlideClass(slide, `slider-${direction}`)
+    } else changeSlideClass(slide, `slider-${direction}-gone`)
+  }
+  slider.classList.toggle("slider_two")
+}
+
+function changeSlideClass(el, newClass) {
+  el.classList.add(newClass)
+  setTimeout(() => {
+    el.classList.remove(newClass)
+  }, 300)
+}
+//--------------------------------------------
+
+// Сабмит формы
+const SUBMIT_BUTTON = document.getElementById("submit-button")
+SUBMIT_BUTTON.addEventListener("click", onSubmitForm)
+
+function onSubmitForm(event) {
+  const form = document.getElementById("form")
+
+  if (form.checkValidity()) {
+    event.preventDefault()
+  }
 }
 //--------------------------------------------

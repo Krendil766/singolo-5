@@ -34,9 +34,9 @@
       </div>
     </header>
     <main class="main">
-      <section class="slider">
+      <section class="slider" id="slider">
         <div class="wrapper slider__wrapper">
-          <button class="arrow-left"></button>
+          <button class="arrow-left" id="arrow-left"></button>
           <div class="slide">
             <div class="phone phone_one">
               <img
@@ -44,8 +44,8 @@
                 id="phone-one"
                 src="assets/images/phone-one.png"
                 alt="phone-one"
-                width="240"
-                height="483"
+                width="216"
+                height="458"
               />
               <img
                 class="phone__screen phone__screen_one"
@@ -54,15 +54,22 @@
                 width="188"
                 height="333"
               />
+              <img
+                class="phone__shadow phone__shadow_one"
+                src="assets/images/phone-vertical-shadow.png"
+                alt="screen"
+                width="240"
+                height="483"
+              />
             </div>
             <div class="phone phone_two">
               <img
-                class=" iphone"
+                class="iphone"
                 id="phone-two"
                 src="assets/images/phone-two.png"
                 alt="phone-two"
-                width="484"
-                height="240"
+                width="459"
+                height="215"
               />
               <img
                 class="phone__screen phone__screen_two"
@@ -71,9 +78,51 @@
                 width="333"
                 height="188"
               />
+              <img
+                class="phone__shadow phone__shadow_two"
+                src="assets/images/phone-horizontal-shadow.png"
+                alt="screen"
+                width="483"
+                height="240"
+              />
             </div>
           </div>
-          <button class="arrow-right"></button>
+          <div class="slide slide_hide">
+            <div class="phone phone_green">
+              <img
+                class="iphone"
+                id="phone-green"
+                src="assets/images/phone-green.png"
+                alt="phone-green"
+                width="230"
+                height="487"
+              />
+              <img
+                class="phone__screen phone__screen_green"
+                src="assets/images/phone-vertical-display-green.png"
+                alt="screen"
+                width="201"
+                height="354"
+              />
+              <img
+                class="phone__shadow phone__shadow_green"
+                src="assets/images/phone-green-shadow.png"
+                alt="screen"
+                width="255"
+                height="513"
+              />
+            </div>
+            <div class="phone_back">
+              <img
+                id="phone-back"
+                src="assets/images/phone-back.png"
+                alt="phone-back"
+                width="517"
+                height="314"
+              />
+            </div>
+          </div>
+          <button class="arrow-right" id="arrow-right"></button>
         </div>
       </section>
       <section class="services" id="services">
@@ -497,7 +546,7 @@
             tortor mauris condimentum nibh.
           </p>
           <div class="get-a-quote__content">
-            <form action="#" class="form">
+            <form action="#" class="form" id="form">
               <input
                 class="form__input-text"
                 type="text"

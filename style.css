@@ -37,6 +37,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
@@ -178,11 +179,16 @@ body {
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: -0.475px;
+  transition: margin 0.3s;
 }
 
 .logo::after {
   color: #f06c64;
   content: "*";
+}
+
+.logo_small {
+  margin: 10px 0 4px 40px;
 }
 
 .navbar {
@@ -191,6 +197,7 @@ body {
   margin-top: 24px;
   margin-right: 40px;
   list-style: none;
+  transition: margin 0.3s;
 }
 
 .navbar__item {
@@ -236,34 +243,49 @@ body {
   content: ".";
 }
 
+.navbar_small {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
 .slider {
-  margin-top: 95px;
+  padding-top: 92px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
+  transition: background-color 1s, border-color 1s;
+}
+
+.slider_two {
+  background-color: #648bf0;
+  border-bottom: 6px solid #647bf0;
 }
 
 .slider__wrapper {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 53px 0 47px 0;
+  height: 516px;
+  padding: 56px 0 25px 0;
+  overflow: hidden;
 }
 
 .arrow-left {
-  margin-left: 42px;
+  left: 42px;
   background: url("assets/images/arrow-left.png") no-repeat 0 0;
 }
 
 .arrow-right {
-  margin-left: 55px;
+  right: 40px;
   background: url("assets/images/arrow-right.png") no-repeat 0 0;
 }
 
 .arrow-left,
 .arrow-right {
+  position: absolute;
+  top: 284px;
+  z-index: 4;
   width: 16px;
   height: 27px;
-  margin-bottom: 11px;
   cursor: pointer;
   border: none;
   transition: filter 0.3s;
@@ -275,42 +297,207 @@ body {
 }
 
 .slide {
+  position: absolute;
   display: flex;
   align-items: center;
 }
 
-.phone {
-  cursor: pointer;
+.slide_hide {
+  visibility: hidden;
 }
 
 .phone_one {
-  margin-bottom: 11px;
-  margin-left: 54px;
+  margin-bottom: 56px;
+  margin-left: 111px;
 }
 
 .phone_two {
-  margin-bottom: 12px;
-  margin-left: 73px;
+  margin-bottom: 56px;
+  margin-left: 98px;
+}
+
+.phone_green {
+  position: relative;
+  margin-bottom: 46px;
+  margin-left: 383px;
+}
+
+.phone_back {
+  position: absolute;
+  left: 252px;
+  z-index: 1;
+  margin-bottom: 1px;
+}
+
+.iphone {
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
 }
 
 .phone__screen {
   position: absolute;
-  z-index: 1;
+  z-index: 4;
+  cursor: pointer;
   transition: opacity 0.4s;
 }
 
 .phone__screen_one {
-  top: 118px;
+  top: 65px;
   left: 126px;
 }
 
 .phone__screen_two {
-  top: 188px;
+  top: 135px;
   left: 485px;
+}
+
+.phone__screen_green {
+  top: 69px;
+  left: 14px;
+}
+
+.phone__shadow {
+  position: absolute;
+  z-index: 2;
+}
+
+.phone__shadow_one {
+  top: 0;
+  left: 112px;
+}
+
+.phone__shadow_two {
+  top: 121px;
+  left: 426px;
+}
+
+.phone__shadow_green {
+  top: 0;
 }
 
 .hide {
   opacity: 0;
+}
+
+.slider-right {
+  visibility: visible !important;
+  -webkit-animation-name: slideright;
+  animation-name: slideright;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideright {
+  0% {
+    transform: translateX(-125%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideright {
+  0% {
+    -webkit-transform: translateX(-125%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+.slider-right-gone {
+  visibility: visible !important;
+  -webkit-animation-name: sliderightgone;
+  animation-name: sliderightgone;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes sliderightgone {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(125%);
+  }
+}
+
+@-webkit-keyframes sliderightgone {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+
+  100% {
+    -webkit-transform: translateX(125%);
+  }
+}
+
+.slider-left {
+  visibility: visible !important;
+  -webkit-animation-name: slideleft;
+  animation-name: slideleft;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideleft {
+  0% {
+    transform: translateX(125%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideleft {
+  0% {
+    -webkit-transform: translateX(125%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+.slider-left-gone {
+  visibility: visible !important;
+  -webkit-animation-name: slideleftgone;
+  animation-name: slideleftgone;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideleftgone {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-125%);
+  }
+}
+
+@-webkit-keyframes slideleftgone {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-125%);
+  }
 }
 
 .services {
