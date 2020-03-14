@@ -189,6 +189,67 @@ function onSubmitForm(event) {
 
   if (form.checkValidity()) {
     event.preventDefault()
+    const subject = document.getElementById("subject")
+    const message = document.getElementById("message")
+    const newModal = singoloModal({
+      subject: subject.value,
+      description: message.value
+    })
+    newModal.open()
   }
+}
+//--------------------------------------------
+
+// Модальное окно
+function createModal({ subject, description: message }) {
+  const newSubject = subject ? `<strong>Тема:</strong> ${subject}` : "Без темы"
+  const newMessage = message
+    ? `<strong>Описание:</strong> ${message}`
+    : "Без описания"
+  const modal = document.createElement("div")
+  modal.classList.add("singolo-modal")
+  modal.insertAdjacentHTML(
+    "afterbegin",
+    `
+      <div class="singolo-modal__overlay" data-close="true">
+        <div class="letter">
+          <h2 class="letter__title">Письмо отправлено</h2>
+          <p class="letter__subject">${newSubject}</p>
+          <p class="letter__description">${newMessage}</p>
+          <button class="letter__button" data-close="true">OK</button>
+        </div>
+      </div>
+    `
+  )
+  document.body.append(modal)
+  return modal
+}
+
+function singoloModal(options = {}) {
+  const modal = createModal(options)
+
+  const singoloModal = {
+    open() {
+      setTimeout(() => {
+        modal.classList.add("singolo-modal_open")
+      }, 100)
+    },
+    close() {
+      modal.classList.remove("singolo-modal_open")
+      modal.classList.add("singolo-modal_hide")
+      setTimeout(() => {
+        modal.classList.remove("singolo-modal_hide")
+        modal.parentNode.removeChild(modal)
+        modal.removeEventListener("click", closeModal)
+      }, 400)
+    }
+  }
+
+  const closeModal = event => {
+    event.target.dataset.close ? singoloModal.close() : null
+  }
+  modal.addEventListener("click", closeModal)
+
+  return singoloModal
 }
 //--------------------------------------------
