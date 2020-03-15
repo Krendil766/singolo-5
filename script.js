@@ -1,7 +1,23 @@
 const NAV = document.getElementById("navbar")
 
 // Подсветка выбранных ссылок в навигации
-window.addEventListener("scroll", () => {
+NAV.addEventListener("click", navClickHandler)
+
+function navClickHandler(event) {
+  const navItem = event.target.parentElement
+  if (navItem.classList.contains("navbar__item")) {
+    Array.from(NAV.querySelectorAll(".navbar__item")).forEach(item => {
+      item.classList.remove("navbar__item_active")
+    })
+    navItem.classList.add("navbar__item_active")
+  }
+}
+//--------------------------------------------
+
+// подсветка ссылок в навигации во время скролла
+window.addEventListener("scroll", onChangeScroll)
+
+function onChangeScroll() {
   if (window.pageYOffset < 655) changeActiveNav(0)
   else if (window.pageYOffset >= 655 && window.pageYOffset < 1155)
     changeActiveNav(1)
@@ -14,7 +30,7 @@ window.addEventListener("scroll", () => {
   )
     changeActiveNav(3)
   if (isPageEnd() || window.pageYOffset >= 2758) changeActiveNav(4)
-})
+}
 
 function isPageEnd() {
   return window.scrollY >= document.documentElement.offsetHeight - innerHeight
@@ -33,7 +49,9 @@ function changeActiveNav(i) {
 // Стилизация хедера при скролле
 const H1 = document.querySelector("h1")
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", onChangeHeader)
+
+function onChangeHeader() {
   if (window.pageYOffset > 100) {
     H1.classList.add("logo_small")
     NAV.classList.add("navbar_small")
@@ -41,7 +59,7 @@ window.addEventListener("scroll", () => {
     H1.classList.remove("logo_small")
     NAV.classList.remove("navbar_small")
   }
-})
+}
 //--------------------------------------------
 
 // Плавная прокрутка скролла
