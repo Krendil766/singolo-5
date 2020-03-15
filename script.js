@@ -199,23 +199,20 @@ function changeSlideClass(el, newClass) {
 //--------------------------------------------
 
 // Сабмит формы
-const SUBMIT_BUTTON = document.getElementById("submit-button")
-SUBMIT_BUTTON.addEventListener("click", onSubmitForm)
+const form = document.getElementById("form")
+form.addEventListener("submit", onSubmitForm)
 
 function onSubmitForm(event) {
-  const form = document.getElementById("form")
+  event.preventDefault()
+  const subject = document.getElementById("subject")
+  const message = document.getElementById("message")
+  const newModal = singoloModal({
+    subject: subject.value,
+    description: message.value
+  })
 
-  if (form.checkValidity()) {
-    event.preventDefault()
-    const subject = document.getElementById("subject")
-    const message = document.getElementById("message")
-    const newModal = singoloModal({
-      subject: subject.value,
-      description: message.value
-    })
-    newModal.open()
-    form.reset()
-  }
+  newModal.open()
+  form.reset()
 }
 //--------------------------------------------
 
