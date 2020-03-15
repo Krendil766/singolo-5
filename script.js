@@ -196,6 +196,7 @@ function onSubmitForm(event) {
       description: message.value
     })
     newModal.open()
+    form.reset()
   }
 }
 //--------------------------------------------
