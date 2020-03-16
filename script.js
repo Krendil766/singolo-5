@@ -14,7 +14,7 @@ function navClickHandler(event) {
 }
 //--------------------------------------------
 
-// подсветка ссылок в навигации во время скролла
+// Подсветка ссылок в навигации во время скролла
 window.addEventListener("scroll", onChangeScroll)
 
 function onChangeScroll() {
@@ -62,23 +62,12 @@ function onChangeHeader() {
 }
 //--------------------------------------------
 
-// Плавная прокрутка скролла
-const LINKS = document.querySelectorAll(".navbar__link")
+// Нажатие на Home в навигации
+const HOME = document.getElementById("home")
+HOME.addEventListener("click", scrollTopHandler)
 
-for (let link of LINKS) {
-  link.addEventListener("click", event => {
-    event.preventDefault()
-    const LINK_TO = link.getAttribute("href")
-    if (LINK_TO === "#home") window.scrollTo({ top, behavior: "smooth" })
-    else {
-      const yOffset = -39
-      const element = document.querySelector(LINK_TO)
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset
-
-      window.scrollTo({ top: y, behavior: "smooth" })
-    }
-  })
+function scrollTopHandler() {
+  window.scrollTo({ top, behavior: "smooth" })
 }
 //--------------------------------------------
 
