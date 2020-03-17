@@ -19,16 +19,9 @@ window.addEventListener("scroll", onChangeScroll)
 
 function onChangeScroll() {
   if (window.pageYOffset < 655) changeActiveNav(0)
-  else if (window.pageYOffset >= 655 && window.pageYOffset < 1155)
-    changeActiveNav(1)
-  else if (window.pageYOffset >= 1155 && window.pageYOffset < 2024)
-    changeActiveNav(2)
-  else if (
-    window.pageYOffset >= 2024 &&
-    window.pageYOffset < 2758 &&
-    !isPageEnd()
-  )
-    changeActiveNav(3)
+  else if (window.pageYOffset >= 655 && window.pageYOffset < 1155) changeActiveNav(1)
+  else if (window.pageYOffset >= 1155 && window.pageYOffset < 2024) changeActiveNav(2)
+  else if (window.pageYOffset >= 2024 && window.pageYOffset < 2758 && !isPageEnd()) changeActiveNav(3)
   if (isPageEnd() || window.pageYOffset >= 2758) changeActiveNav(4)
 }
 
@@ -100,9 +93,7 @@ function shufflePortfolio(event) {
   shuffledPortfolioPhotos.className = "portfolio__photos"
   shuffledPortfolioPhotos.id = "portfolio__photos"
 
-  const portfolio = Array.from(
-    portfolioPhotos.querySelectorAll(".project-link")
-  )
+  const portfolio = Array.from(portfolioPhotos.querySelectorAll(".project-link"))
 
   for (let i = portfolio.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1))
@@ -143,10 +134,10 @@ const phones = document.querySelectorAll(".phone")
 for (let phone of phones) phone.addEventListener("click", togglePhone)
 
 function togglePhone(event) {
-  if (event.target.classList.contains("iphone")) {
-    event.target.nextElementSibling.classList.toggle("hide")
-  } else if (event.target.classList.contains("phone__screen"))
-    event.target.classList.toggle("hide")
+  const phone = event.target
+  if (phone.classList.contains("iphone")) {
+    phone.nextElementSibling.classList.toggle("hide")
+  } else if (phone.classList.contains("phone__screen")) phone.classList.toggle("hide")
 }
 //--------------------------------------------
 
@@ -207,26 +198,41 @@ function onSubmitForm(event) {
 
 // Модальное окно
 function createModal({ subject, description: message }) {
-  const newSubject = subject ? `<strong>Тема:</strong> ${subject}` : "Без темы"
-  const newMessage = message
-    ? `<strong>Описание:</strong> ${message}`
-    : "Без описания"
+  const letterTitle = document.createElement("h2")
+  letterTitle.classList.add("letter__title")
+  letterTitle.textContent = "Письмо отправлено"
+
+  const letterSubject = document.createElement("p")
+  letterSubject.classList.add("letter__subject")
+  letterSubject.textContent = subject ? `Тема: ${subject}` : "Без темы"
+
+  const letterDescription = document.createElement("p")
+  letterDescription.classList.add("letter__description")
+  letterDescription.textContent = message ? `Описание: ${message}` : "Без описания"
+
+  const letterButton = document.createElement("button")
+  letterButton.classList.add("letter__button")
+  letterButton.textContent = "OK"
+  letterButton.dataset.close = true
+
+  const letter = document.createElement("div")
+  letter.classList.add("letter")
+
+  const modalOverlay = document.createElement("div")
+  modalOverlay.classList.add("singolo-modal__overlay")
+  modalOverlay.dataset.close = true
+
   const modal = document.createElement("div")
   modal.classList.add("singolo-modal")
-  modal.insertAdjacentHTML(
-    "afterbegin",
-    `
-      <div class="singolo-modal__overlay" data-close="true">
-        <div class="letter">
-          <h2 class="letter__title">Письмо отправлено</h2>
-          <p class="letter__subject">${newSubject}</p>
-          <p class="letter__description">${newMessage}</p>
-          <button class="letter__button" data-close="true">OK</button>
-        </div>
-      </div>
-    `
-  )
+
+  letter.append(letterTitle)
+  letter.append(letterSubject)
+  letter.append(letterDescription)
+  letter.append(letterButton)
+  modalOverlay.append(letter)
+  modal.append(modalOverlay)
   document.body.append(modal)
+
   return modal
 }
 
