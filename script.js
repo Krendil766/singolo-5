@@ -188,7 +188,7 @@ function onSubmitForm(event) {
   const message = document.getElementById("message")
   const newModal = singoloModal({
     subject: subject.value,
-    description: message.value
+    message: message.value
   })
 
   newModal.open()
@@ -197,7 +197,7 @@ function onSubmitForm(event) {
 //--------------------------------------------
 
 // Модальное окно
-function createModal({ subject, description: message }) {
+function createModal({ subject, message }) {
   const letterTitle = document.createElement("h2")
   letterTitle.classList.add("letter__title")
   letterTitle.textContent = "Письмо отправлено"
