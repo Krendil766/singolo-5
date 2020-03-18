@@ -147,8 +147,8 @@ const arrowRight = document.getElementById("arrow-right")
 const slides = document.querySelectorAll(".slide")
 const slider = document.getElementById("slider")
 
-arrowLeft.addEventListener("click", changeSlideRight)
-arrowRight.addEventListener("click", changeSlideLeft)
+arrowLeft.addEventListener("click", changeSlideLeft)
+arrowRight.addEventListener("click", changeSlideRight)
 
 function changeSlideLeft() {
   changeSlide("left")
