@@ -18,11 +18,18 @@ function navClickHandler(event) {
 window.addEventListener("scroll", onChangeScroll)
 
 function onChangeScroll() {
-  if (window.pageYOffset < 655) changeActiveNav(0)
-  else if (window.pageYOffset >= 655 && window.pageYOffset < 1155) changeActiveNav(1)
-  else if (window.pageYOffset >= 1155 && window.pageYOffset < 2024) changeActiveNav(2)
-  else if (window.pageYOffset >= 2024 && window.pageYOffset < 2758 && !isPageEnd()) changeActiveNav(3)
-  if (isPageEnd() || window.pageYOffset >= 2758) changeActiveNav(4)
+  const HEADER_HEIGHT = 40
+  const servicesPosition = document.getElementById("services").offsetTop - HEADER_HEIGHT
+  const portfolioPosition = document.getElementById("portfolio").offsetTop - HEADER_HEIGHT
+  const aboutPosition = document.getElementById("about").offsetTop - HEADER_HEIGHT
+  const contactPosition = document.getElementById("contact").offsetTop - HEADER_HEIGHT
+
+  const currentPosition = window.scrollY
+  if (currentPosition < servicesPosition) changeActiveNav(0)
+  else if (currentPosition >= servicesPosition && currentPosition < portfolioPosition) changeActiveNav(1)
+  else if (currentPosition >= portfolioPosition && currentPosition < aboutPosition) changeActiveNav(2)
+  else if (currentPosition >= aboutPosition && currentPosition < contactPosition && !isPageEnd()) changeActiveNav(3)
+  if (isPageEnd() || currentPosition >= contactPosition) changeActiveNav(4)
 }
 
 function isPageEnd() {
@@ -188,7 +195,7 @@ function onSubmitForm(event) {
   const message = document.getElementById("message")
   const newModal = singoloModal({
     subject: subject.value,
-    message: message.value
+    message: message.value,
   })
 
   newModal.open()
@@ -253,7 +260,7 @@ function singoloModal(options = {}) {
         modal.parentNode.removeChild(modal)
         modal.removeEventListener("click", closeModal)
       }, 400)
-    }
+    },
   }
 
   const closeModal = event => {

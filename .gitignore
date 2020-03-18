@@ -1,5 +1,6 @@
 node_modules
 scss
+.prettierrc.js
 .stylelintrc.json
 gulpfile.js
 package-lock.json
