@@ -1,6 +1,9 @@
-const NAV = document.getElementById("navbar")
+window.onload = () => {
+  onChangeScroll()
+}
 
 // Подсветка выбранных ссылок в навигации
+const NAV = document.getElementById("navbar")
 NAV.addEventListener("click", navClickHandler)
 
 function navClickHandler(event) {
@@ -18,13 +21,14 @@ function navClickHandler(event) {
 window.addEventListener("scroll", onChangeScroll)
 
 function onChangeScroll() {
+  onChangeHeader()
   const HEADER_HEIGHT = 40
   const servicesPosition = document.getElementById("services").offsetTop - HEADER_HEIGHT
   const portfolioPosition = document.getElementById("portfolio").offsetTop - HEADER_HEIGHT
   const aboutPosition = document.getElementById("about").offsetTop - HEADER_HEIGHT
   const contactPosition = document.getElementById("contact").offsetTop - HEADER_HEIGHT
 
-  const currentPosition = window.scrollY
+  const currentPosition = window.pageYOffset
   if (currentPosition < servicesPosition) changeActiveNav(0)
   else if (currentPosition >= servicesPosition && currentPosition < portfolioPosition) changeActiveNav(1)
   else if (currentPosition >= portfolioPosition && currentPosition < aboutPosition) changeActiveNav(2)
@@ -33,7 +37,7 @@ function onChangeScroll() {
 }
 
 function isPageEnd() {
-  return window.scrollY >= document.documentElement.offsetHeight - innerHeight
+  return window.pageYOffset >= document.documentElement.offsetHeight - innerHeight
 }
 
 function changeActiveNav(i) {
@@ -48,8 +52,6 @@ function changeActiveNav(i) {
 
 // Стилизация хедера при скролле
 const H1 = document.querySelector("h1")
-
-window.addEventListener("scroll", onChangeHeader)
 
 function onChangeHeader() {
   if (window.pageYOffset > 100) {
