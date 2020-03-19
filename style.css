@@ -628,6 +628,7 @@ body {
 
 .tags__item_active {
   color: #dedede;
+  cursor: auto;
   border: 1px solid #c5c5c5;
 }
 
