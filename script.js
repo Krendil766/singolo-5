@@ -201,7 +201,7 @@ function onSubmitForm(event) {
   })
 
   newModal.open()
-  form.reset()
+  // form.reset()
 }
 //--------------------------------------------
 
@@ -255,6 +255,7 @@ function singoloModal(options = {}) {
       }, 100)
     },
     close() {
+      form.reset()
       modal.classList.remove("singolo-modal_open")
       modal.classList.add("singolo-modal_hide")
       setTimeout(() => {
