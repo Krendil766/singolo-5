@@ -188,6 +188,7 @@ function changeSlideClass(el, newClass) {
 //--------------------------------------------
 
 // Сабмит формы
+let isModalOpen = false
 const form = document.getElementById("form")
 form.addEventListener("submit", onSubmitForm)
 
@@ -200,7 +201,7 @@ function onSubmitForm(event) {
     message: message.value,
   })
 
-  newModal.open()
+  isModalOpen ? null : newModal.open()
   // form.reset()
 }
 //--------------------------------------------
@@ -246,16 +247,20 @@ function createModal({ subject, message }) {
 }
 
 function singoloModal(options = {}) {
-  const modal = createModal(options)
+  let modal
+  if (isModalOpen) return
+  else modal = createModal(options)
 
   const singoloModal = {
     open() {
+      isModalOpen = true
       setTimeout(() => {
         modal.classList.add("singolo-modal_open")
       }, 100)
     },
     close() {
       form.reset()
+      isModalOpen = false
       modal.classList.remove("singolo-modal_open")
       modal.classList.add("singolo-modal_hide")
       setTimeout(() => {
