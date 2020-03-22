@@ -251,6 +251,10 @@ body {
   .header nav {
     display: none;
   }
+
+  .logo {
+    margin-left: 0;
+  }
 }
 
 @media (hover: hover) {
