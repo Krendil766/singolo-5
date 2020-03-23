@@ -52,14 +52,17 @@ function changeActiveNav(i) {
 
 // Стилизация хедера при скролле
 const H1 = document.querySelector("h1")
+const MENU = document.querySelector(".header__menu")
 
 function onChangeHeader() {
   if (window.pageYOffset > 100) {
     H1.classList.add("logo_small")
     NAV.classList.add("navbar_small")
+    MENU.classList.add("header__menu_small")
   } else {
     H1.classList.remove("logo_small")
     NAV.classList.remove("navbar_small")
+    MENU.classList.remove("header__menu_small")
   }
 }
 //--------------------------------------------
@@ -67,6 +70,8 @@ function onChangeHeader() {
 // Нажатие на Home в навигации
 const HOME = document.getElementById("home")
 HOME.addEventListener("click", scrollTopHandler)
+// const HOME_MOBILE = document.getElementById("home-mobile")
+// HOME_MOBILE.addEventListener("click", scrollTopHandler)
 
 function scrollTopHandler() {
   window.scrollTo({ top, behavior: "smooth" })
@@ -277,5 +282,56 @@ function singoloModal(options = {}) {
   modal.addEventListener("click", closeModal)
 
   return singoloModal
+}
+//--------------------------------------------
+
+// Menu mobile
+const menuModal = document.querySelector(".menu-modal")
+const navMobile = document.querySelector(".nav-mobile")
+const navDesktop = document.querySelector(".nav")
+const headerWrapper = document.querySelector(".header__wrapper")
+let isMenuOpen = false
+
+MENU.addEventListener("click", menuClickHandler)
+menuModal.addEventListener("click", closeMenuHandler)
+
+function closeMenuHandler(event) {
+  event.target.dataset.close && isMenuOpen ? closeMenu() : null
+}
+
+function menuClickHandler() {
+  isMenuOpen ? closeMenu() : openMenu()
+}
+
+function openMenu() {
+  toggleClasses()
+  isMenuOpen = true
+  navMobile.append(NAV)
+}
+
+function closeMenu() {
+  toggleClasses()
+  isMenuOpen = false
+  menuModal.classList.add("menu-modal_hide")
+  setTimeout(() => {
+    menuModal.classList.remove("menu-modal_hide")
+  }, 400)
+  navDesktop.append(NAV)
+}
+
+function toggleClasses() {
+  MENU.classList.toggle("header__menu_open")
+  menuModal.classList.toggle("menu-modal_open")
+  NAV.classList.toggle("navbar_mobile")
+  headerWrapper.classList.toggle("header__wrapper_menu-open")
+}
+//--------------------------------------------
+
+// Click по социальный иконкам
+const socialLinks = document.querySelectorAll(".social-links")
+for (let socialLink of socialLinks) {
+  socialLink.addEventListener("click", event => {
+    event.preventDefault()
+  })
 }
 //--------------------------------------------

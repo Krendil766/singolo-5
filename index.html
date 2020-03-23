@@ -11,23 +11,29 @@
   <body>
     <header class="header">
       <div class="wrapper header__wrapper">
+        <div class="header__menu"><span></span></div>
+        <div class="menu-modal">
+          <div class="menu-modal__overlay" data-close="true">
+            <nav class="nav-mobile"></nav>
+          </div>
+        </div>
         <h1 class="logo">singolo</h1>
-        <nav>
+        <nav class="nav">
           <ul class="navbar" id="navbar">
             <li class="navbar__item navbar__item_active">
-              <a class="navbar__link" href="#home" id="home">home</a>
+              <a class="navbar__link" href="#home" id="home" data-close="true">home</a>
             </li>
             <li class="navbar__item">
-              <a class="navbar__link" href="#services">services</a>
+              <a class="navbar__link" href="#services" data-close="true">services</a>
             </li>
             <li class="navbar__item">
-              <a class="navbar__link" href="#portfolio">portfolio</a>
+              <a class="navbar__link" href="#portfolio" data-close="true">portfolio</a>
             </li>
             <li class="navbar__item">
-              <a class="navbar__link" href="#about">about</a>
+              <a class="navbar__link" href="#about" data-close="true">about</a>
             </li>
             <li class="navbar__item">
-              <a class="navbar__link" href="#contact">contact</a>
+              <a class="navbar__link" href="#contact" data-close="true">contact</a>
             </li>
           </ul>
         </nav>
@@ -437,7 +443,7 @@
     <footer class="footer">
       <div class="wrapper footer__wrapper">
         <div class="footer__copyright">
-          <p class="copyright">© Copyright 2013 · by PSDchat.com</p>
+          <p class="copyright">© Copyright 2013</p>
         </div>
         <div class="footer__social-links">
           <div class="social-links">
